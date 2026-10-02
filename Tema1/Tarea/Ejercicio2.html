@@ -7,17 +7,15 @@
 </head>
 <body>
     <h1>Ejercicio2: Cambio de imágenes </h1>
-    <!-- Ponemos 'imagen1.jpg' como la foto inicial -->
     <img id="fotoMoto" onclick="cambiaImg()" src="imagen1.jpg" alt="Foto de Moto" width="400" height="450" style="cursor: pointer; object-fit: cover;">
     <p>Haz click sobre la foto para cambiar la foto.</p>
 
     <script>
-        // Array con las rutas exactas de tus archivos locales
         var imagenes = [
             "imagen1.jpg",
             "imagen2.jpg",
             "imagen3.jpg",
-            "images.jfif"  // Ojo: esta última tiene extensión .jfif en tu carpeta
+            "images.jfif" 
         ];
         var posicion = 0;
 
