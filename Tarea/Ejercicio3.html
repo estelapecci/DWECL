@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3</title>
+</head>
+<body>
+    <h1>Ejercicio 3: Test del motociclismo: Verdadero o Falso</h1>
+
+    <p id="p1">1. Valentino Rossi consiguió un total de 9 campeonatos del mundo de motociclismo en distintas categorías a lo largo de su carrera deportiva.</p>
+    <button onclick="comprobar('p1', true, true)">Verdadero</button>
+    <button onclick="comprobar('p1', false, true)">Falso</button>
+
+    <p id="p2">2. El sistema de frenos antibloqueo (ABS) en las motocicletas es infalible y reduce siempre la distancia de frenado de forma drástica, incluso sobre superficies de tierra suelta o grava.</p>
+    <button onclick="comprobar('p2', true, true)">Verdadero</button>
+    <button onclick="comprobar('p2', false, true)">Falso</button>
+
+    <p id="p3">3. Para iniciar un giro hacia la derecha a cierta velocidad mediante la técnica del contramanillar, el piloto debe empujar intencionadamente el semimanillar derecho hacia adelante.</p>
+    <button onclick="comprobar('p3', true, false)">Verdadero</button>
+    <button onclick="comprobar('p3', false, false)">Falso</button>
+
+    <p id="p4">4. El Tourist Trophy de la Isla de Man (Isla de Man TT) es una prueba oficial puntuable dentro del calendario actual del Campeonato del Mundo de MotoGP.</p>
+    <button onclick="comprobar('p4', true, false)">Verdadero</button>
+    <button onclick="comprobar('p4', false, false)">Falso</button>
+
+    <p id="p5">5. Un motor de dos tiempos (2T) realiza las cuatro fases de su ciclo de funcionamiento (admisión, compresión, explosión y escape) en una sola vuelta del cigüeñal.</p>
+    <button onclick="comprobar('p5', true, true)">Verdadero</button>
+    <button onclick="comprobar('p5', false, true)">Falso</button>
+
+    <p id="p6">6. Durante una frenada de emergencia sobre asfalto seco, el freno trasero es el responsable de aportar entre el 70% y el 90% de la capacidad total de detención de la motocicleta.</p>
+    <button onclick="comprobar('p6', true, false)">Verdadero</button>
+    <button onclick="comprobar('p6', false, false)">Falso</button>
+
+    <p id="p7">7. La emblemática compañía estadounidense Harley-Davidson fue fundada en la ciudad de Milwaukee, Wisconsin, a principios del siglo XX, concretamente en 1903.</p>
+    <button onclick="comprobar('p7', true, true)">Verdadero</button>
+    <button onclick="comprobar('p7', false, true)">Falso</button>
+
+    <script>
+        function comprobar(id, respuestaUsuario, respuestaCorrecta) {
+            var frase = document.getElementById(id);
+            if (respuestaUsuario == respuestaCorrecta) {
+                frase.style.color = "green";
+            } else {
+                frase.style.color = "red";
+            }
+        }
+    </script>
+</body>
+</html>
