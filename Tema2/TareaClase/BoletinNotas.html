@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Boletín de notas - Notas</title>
+</head>
+<body>
+  <h1>Boletín de notas de la clase</h1>
+
+  <h2>Notas por trimestre</h2>
+  <table border="1">
+    <thead>
+      <tr><th>Alumno</th><th>1T</th><th>2T</th><th>3T</th><th>Media</th><th>Calificación</th></tr>
+    </thead>
+    <tbody id="tabla"></tbody>
+  </table>
+
+  <h2>Añadir alumno</h2>
+  Nombre: <input type="text" id="nombre">
+  1T: <input type="number" id="n1">
+  2T: <input type="number" id="n2">
+  3T: <input type="number" id="n3">
+  <button onclick="anadir()">Añadir</button>
+  <br><br>
+  <button onclick="reiniciar()">Volver a los datos iniciales</button>
+
+<script>
+  function datosIniciales() {
+    return [
+      { nombre: "Ana",   notas: [7, 8, 9] },
+      { nombre: "Luis",  notas: [4, 5, 6] },
+      { nombre: "Marta", notas: [3, 4, 2] },
+      { nombre: "Pablo", notas: [9, 10, 9] },
+      { nombre: "Sara",  notas: [5, 4, 6] }
+    ];
+  }
+
+  let alumnos = datosIniciales();
+
+  function calificacion(media) {
+    if (media < 5) return "Insuficiente";
+    if (media < 6) return "Suficiente";
+    if (media < 7) return "Bien";
+    if (media < 9) return "Notable";
+    return "Sobresaliente";
+  }
+
+  function mostrar() {
+    let html = "";
+    for (let i = 0; i < alumnos.length; i++) {
+      let a = alumnos[i];
+      let media = (a.notas[0] + a.notas[1] + a.notas[2]) / 3;
+      html += "<tr>" +
+        "<td>" + a.nombre + "</td>" +
+        "<td>" + a.notas[0] + "</td>" +
+        "<td>" + a.notas[1] + "</td>" +
+        "<td>" + a.notas[2] + "</td>" +
+        "<td>" + media.toFixed(2) + "</td>" +
+        "<td>" + calificacion(media) + "</td>" +
+        "</tr>";
+    }
+    document.getElementById("tabla").innerHTML = html;
+  }
+
+  function anadir() {
+    let nombre = document.getElementById("nombre").value;
+    let n1 = Number(document.getElementById("n1").value);
+    let n2 = Number(document.getElementById("n2").value);
+    let n3 = Number(document.getElementById("n3").value);
+    alumnos.push({ nombre: nombre, notas: [n1, n2, n3] });
+    mostrar();
+  }
+
+  function reiniciar() {
+    alumnos = datosIniciales();
+    mostrar();
+  }
+
+  mostrar();
+</script>
+</body>
+</html>
