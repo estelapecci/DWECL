@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Rombo hueco</title>
+</head>
+<body>
+  <h1>Rombo hueco</h1>
+
+  <script>
+    let filas = parseInt(prompt("Introduce el número de filas (impar):"));
+
+    if (isNaN(filas) || filas < 1) {
+      document.write("<p>Error: introduce un número válido mayor que 0.</p>");
+    } else if (filas % 2 === 0) {
+      document.write("<p>Error: el número de filas debe ser impar.</p>");
+    } else {
+      const mitad = (filas - 1) / 2;
+      document.write("<pre>");
+
+      for (let i = 0; i < filas; i++) {
+        const n = i <= mitad ? i : filas - 1 - i;
+        let linea = "";
+
+        for (let e = 0; e < mitad - n; e++) {
+          linea += " ";
+        }
+
+        linea += "*";
+
+        if (n > 0) {
+          for (let e = 0; e < 2 * n - 1; e++) {
+            linea += " ";
+          }
+          linea += "*";
+        }
+
+        document.write(linea + "\n");
+      }
+
+      document.write("</pre>");
+    }
+  </script>
+</body>
+</html>
